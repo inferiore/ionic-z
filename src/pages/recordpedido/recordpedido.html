@@ -1,0 +1,83 @@
+<!--
+  Generated template for the RecordpedidoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registro de Pedidos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-card>
+      <ion-list no-lines>
+        <button ion-item (click)="gotobuscarcliente()">
+          <ion-icon name="search" item-start></ion-icon>
+          <ion-input [(ngModel)]="opedido.nomcliente" placeholder="Especifique cliente"> </ion-input>
+        </button>
+      </ion-list>
+    </ion-card>
+    <ion-item>
+      <ion-label floating>
+        Observacion
+      </ion-label>
+      <ion-textarea [(ngModel)]="opedido.pedido.observacion">
+      </ion-textarea>
+    </ion-item>
+    <ion-list-header>
+      <h2>ITEMS Total:{{opedido.pedido.montototal| currency:'':'symbol':'1.2-2'}}</h2>
+    </ion-list-header>
+    <ion-item no-lines>
+      <button [disabled]="!puedoagregaritems()" ion-button mini item-start (click)="gotoedititem(null)">
+        <ion-icon name="add"></ion-icon>
+        Agregar Items
+      </button>
+    </ion-item>
+    <ion-item-sliding *ngFor="let i of opedido.pedido.lsitems">
+      <ion-item>
+        <h3>
+          <b>{{i.concepto.nomconcepto}}</b>
+        </h3>
+        <p>
+          {{i.cantidad}} por {{i.preciounidad| currency:'':'symbol':'1.2-2'}} Total {{i.montoitems| currency:'':'symbol':'1.2-2'}} %dcto:{{i.descuento}} iva:{{i.impuestoventa}}% inc:{{i.impuestoconsumo}}%
+        </p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="eliminaritems(i)">
+          <!--><ion-icon name="trash"></ion-icon></!-->
+          Eliminar
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="gotoedititem(i)">
+          <!--><ion-icon name="create"></ion-icon></!-->
+          Modificar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <button ion-button mini item-end (click)="aceptarpedido()">
+            <!--><ion-icon name="checkmark"></ion-icon></!-->
+            Aceptar
+          </button>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item no-lines>
+          <button ion-button mini color="danger" item-start (click)="closepagina()">
+           <!--> <ion-icon name="close"></ion-icon></!-->
+            Cancelar
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

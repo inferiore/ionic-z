@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Zeus Mobile</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+    <ion-list>
+        <ion-list-header>
+            SELECCIONE SU OPCION
+        </ion-list-header>
+        <ion-item (click)="gotopedidos()">
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/carrito.png">
+            </ion-thumbnail>
+            <h2>Pedidos</h2>
+            <p>Registre sus pedidos </p>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/recaudos.jpeg">
+            </ion-thumbnail>
+            <h2>Recaudos</h2>
+            <p>Regiestre pagos clientes</p>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/informes.png">
+            </ion-thumbnail>
+            <h2>Informes</h2>
+            <p>Consulte pedidos, productos y stocks</p>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/encuestas.png">
+            </ion-thumbnail>
+            <h2>Ecuestas</h2>
+            <p>Nos intereza su opinión</p>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/captar-cliente.jpg">
+            </ion-thumbnail>
+            <h2>Prospectos</h2>
+            <p>Agregue nuevos prospectos</p>
+        </ion-item>
+    </ion-list>
+    <ion-fab center bottom >
+        <button ion-fab mini>
+            <ion-icon  name="map"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ZeusMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,78 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Zeus Mobile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding (press)="pressEvent()" (swipe)="swipeEvent()">
+<!--
+  <ion-item>
+    <ion-label floating>cantidad sin formato</ion-label>
+    <ion-input   class="znumeric" type="text" [(ngModel)]="value" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>cantidad formateada</ion-label>
+    <ion-input   class="znumeric" type="text" [(ngModel)]="value" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}"></ion-input>
+  </ion-item>
+
+
+<ion-item>
+  <ion-input uppercase [(ngModel)]="nombre"></ion-input>
+</ion-item>
+
+<ion-item>
+<p>{{nombre}}</p>
+</ion-item>
+-->
+  <ion-list>
+    <ion-list-header>
+      INICIO DE SESION 
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username"  (keyup)="messageerror=null" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Clave</ion-label>
+      <ion-input type="password" required [(ngModel)]="password" (keyup)="messageerror=null" ></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <!-- <button ion-button full (click)="GoToWebview()" >LeerQR</button> -->
+      <button ion-button full (click)="login()" >Entrar</button>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label floating>Custom Zeus Input</ion-label>
+      <ion-input zeus type="password" required  ></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label>Select</ion-label>
+      <ion-select>
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+     <ion-item>
+      <ion-label>Zselect</ion-label>
+      <ion-select zeus >
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item> -->
+  
+  </ion-list>
+</ion-content>

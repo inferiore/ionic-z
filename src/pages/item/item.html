@@ -1,0 +1,109 @@
+<!--
+  Generated template for the ItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Item</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+
+  <form [formGroup]="formitem">
+
+    <!--
+    <ion-card>
+        <button ion-item (click)="buscarproductos()">
+        <ion-icon mini name="search" item-end></ion-icon>
+        <ion-input formControlName="cliente" [(ngModel)]="oitem.nomconcepto"></ion-input>
+      </button> 
+    </ion-card>
+-->
+
+    <ion-card>
+      <ion-list>
+        <button ion-item (click)="buscarproductos()">
+          <ion-icon name="search" item-start></ion-icon>
+          <ion-input formControlName="cliente" [(ngModel)]="oitem.nomconcepto" placeholder="Especifique productos"> </ion-input>
+        </button>
+      </ion-list>
+    </ion-card>
+
+    <ion-item>
+      <ion-label floating>
+        Cantidad
+      </ion-label>
+      <ion-input formControlName="cantidad" [(ngModel)]="oitem.cantidad" class="znumeric" type="text" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        Precio unidad
+      </ion-label>
+      <ion-input formControlName="preciounidad" [(ngModel)]="precio" class="znumeric" type="text" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        % Descuento
+      </ion-label>
+      <ion-input formControlName="descuento" [(ngModel)]="oitem.descuento" class="znumeric" type="text" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        % IVA
+      </ion-label>
+      <ion-input [disabled]="!aplicaiva" formControlName="impuestoventa" [(ngModel)]="oitem.impuestoventa" class="znumeric" type="text" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        % INC
+      </ion-label>
+      <ion-input [disabled]="!aplicainc" formControlName="impuestoconsumo" [(ngModel)]="oitem.impuestoconsumo" class="znumeric" type="text" [zformat]="{tipo:'numerico',simbolodecimal:'.',simbolomiles:',',decimales:2,longitud:0}">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <button ion-button icon-right [disabled]="!formitem.valid" (click)="aceptar()">Aceptar
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-item>
+
+
+  </form>
+</ion-content>
+
+<!-->
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <button ion-fab mini item-end (click)="aceptar()">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item no-lines>
+          <button ion-fab mini color="danger" item-start (click)="closepagina()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+</!-->

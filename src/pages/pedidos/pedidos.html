@@ -1,0 +1,45 @@
+<!--
+  Generated template for the PedidosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-title text-center>Pedidos
+      </ion-title>    
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="card-background-page">
+    <ion-fab top right edge (click)="gotorecordpedido(null)">
+        <button ion-fab mini><ion-icon name="add" ></ion-icon></button>
+      </ion-fab>
+    <ion-list>
+        <ion-list-header>
+            PEDIDOS SIN REPORTAR
+          </ion-list-header>
+          <ion-item-sliding *ngFor="let p of olistapedidos.listapedido.pedido" >
+              <ion-item aria-multiline="true">
+                <h3><b>{{p.cliente.nomcliente}}</b></h3>
+                      <p >Total:{{p.montototal| currency:'':'symbol':'1.2-2'}} Fecha:{{p.fecha}}</p>
+              </ion-item>
+              <ion-item-options side="right">
+                <button ion-button color="danger" (click)="eliminarpedidos(p)"> 
+                  <ion-icon name="trash"></ion-icon>
+                  Eliminar
+                </button>
+              </ion-item-options>
+              <ion-item-options side="left" >
+                <button ion-button color="primary">
+                  <ion-icon name="arrow-round-up"></ion-icon>
+                  Reportar
+                </button>
+                <button ion-button color="secondary" (click)="gotorecordpedido(p)">
+                  <ion-icon name="arrow-round-up"></ion-icon>
+                  Editar
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+
+      </ion-list>
+</ion-content>
